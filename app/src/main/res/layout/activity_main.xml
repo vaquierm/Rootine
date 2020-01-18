@@ -4,53 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/titleImage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/goal"
+        android:layout_height="180dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/top_logo" />
+
+    <ImageView
+        android:id="@+id/goalText"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleImage"
+        app:layout_constraintVertical_bias="0.268"
+        app:srcCompat="@mipmap/my_goal" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="213dp"
         android:layout_height="39dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="96dp"
         android:layout_marginRight="96dp"
         android:entries="@array/numbers_array"
-        android:textSize="25sp"
         android:spinnerMode="dropdown"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/goalText" />
+
+    <ImageView
+        android:id="@+id/goalText2"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.145"
+        app:srcCompat="@mipmap/meatless_days" />
 
     <ImageButton
         android:id="@+id/calenderButton"
-        android:layout_width="226dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginRight="92dp"
+        android:layout_width="270dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:background="@drawable/border"
+        android:padding="7dp"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:srcCompat="@color/colorAccent" />
+        app:layout_constraintTop_toBottomOf="@+id/goalText2"
+        android:src="@mipmap/calendar" />
 
     <ImageButton
         android:id="@+id/animalsButton"
-        android:layout_width="131dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginRight="140dp"
+        android:layout_width="270dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:background="@drawable/border"
+        android:padding="7dp"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calenderButton"
-        app:srcCompat="@color/colorAccent" />
+        android:src="@mipmap/my_wildlife_reserve" />
 
 
 </android.support.constraint.ConstraintLayout>
