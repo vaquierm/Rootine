@@ -2,6 +2,8 @@ package com.example.rootine;
 
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -23,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         this.aniBtn = (ImageButton) findViewById(R.id.animalsButton);
         this.spn = (Spinner) findViewById(R.id.spinner);
         this.manager = AppManager.getInstance();
-
 
         calBtn.setOnClickListener(new View.OnClickListener(){
                 @Override

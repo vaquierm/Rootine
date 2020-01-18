@@ -60,7 +60,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.progressBar.setProgress(progress);
             String message;
             if(goal - progress == 0){
-                message = "Wow! You reached your weekly goal!";
+                message = "Wow! You reached your goal this week!";
             }else if(goal - progress < 0){
                 message = "You exceeded your goal by " + (progress - goal) + " day" + (((progress - goal) == 1)?"":"s") + "!\n Exceptional!";
             }else {
