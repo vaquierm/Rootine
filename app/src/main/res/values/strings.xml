@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Rootine</string>
+    <string-array name="numbers_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+    <string name="goal">My goal:</string>
+    <string name="stating_goal">Number of meatless meals a week:</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
 </resources>
