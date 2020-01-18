@@ -16,26 +16,26 @@ public class AnimalActivity extends AppCompatActivity {
     //vars
     private ArrayList<String> animalNames = new ArrayList<>();
     private ArrayList<Integer> animalImages = new ArrayList<>();
+    AppManager manager;
+    int numAnimals;
     RecyclerView recyclerView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal);
         Log.d(TAG, "onCreate: started");
-
+        manager = AppManager.getInstance();
+        numAnimals = manager.getNumAnimals();
         initImageBitmaps();
-        initRecyclerView();
-
     }
 
     private void initImageBitmaps(){
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
+
         animalImages.add(R.mipmap.chicken);
         animalNames.add("Chicken");
-
         animalImages.add(R.mipmap.kangaroo);
         animalNames.add("Kangaroo");
         animalImages.add(R.mipmap.bee);
@@ -84,6 +84,17 @@ public class AnimalActivity extends AppCompatActivity {
         animalNames.add("Wasp");
         animalImages.add(R.mipmap.whale);
         animalNames.add("Whale");
+
+        int totalNumAnimals = animalImages.size();
+        //get a sublist equal to the number of animals the user as earned
+        if (numAnimals != 0) {
+            animalImages.subList((numAnimals - 1), (totalNumAnimals - 1)).clear();
+            animalNames.subList((numAnimals - 1), (totalNumAnimals - 1)).clear();
+        }else{
+            animalImages.clear();
+            animalNames.clear();
+        }
+
         initRecyclerView();
 
         //add images to thing

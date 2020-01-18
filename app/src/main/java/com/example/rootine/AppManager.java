@@ -6,14 +6,17 @@ public class AppManager {
     private static AppManager instance = null;
 
     private int goal;
+    private int numAnimals;
 
     private AppManager(){
-
+        goal = 0;
+        //SET THIS TO 0 LATER
+        numAnimals = 0;
     }
-    public AppManager getInstance(){
+    static AppManager getInstance(){
         if (instance == null){
             instance = new AppManager();
-            goal = 0;
+
         }
         return instance;
     }
@@ -25,4 +28,14 @@ public class AppManager {
     public int getGoal(){
         return this.goal;
     }
+
+    public void incNumAnimals(){
+        this.numAnimals ++;
+    }
+
+
+    int getNumAnimals(){
+        return this.numAnimals;
+    }
+
 }
