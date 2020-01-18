@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
@@ -22,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         this.calBtn = (ImageButton) findViewById(R.id.calenderButton);
         this.aniBtn = (ImageButton) findViewById(R.id.animalsButton);
         this.spn = (Spinner) findViewById(R.id.spinner);
+
         calBtn.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         );
+
         aniBtn.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
