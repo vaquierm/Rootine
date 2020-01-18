@@ -18,10 +18,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private static final String TAG = "RecyclerViewAdapter";
 
     private ArrayList<String> mImageNames = new ArrayList<>();
-    private ArrayList<String> mImages = new ArrayList<>();
+    private ArrayList<Integer> mImages = new ArrayList<>();
     private Context mContext;
 
-    public RecyclerViewAdapter(ArrayList<String> imageNames, ArrayList<String> images, Context context){
+    public RecyclerViewAdapter(ArrayList<String> imageNames, ArrayList<Integer> images, Context context){
         mImageNames = imageNames;
         mImages = images;
         mContext = context;
@@ -32,8 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        return new ViewHolder(view);
     }
 
     @Override
@@ -41,6 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Log.d(TAG, "onBindViewHolder: called");
         ///figure out how to update the images as well!!!
         holder.imageName.setText(mImageNames.get(position));
+        holder.image.setImageResource(mImages.get(position));
         holder.parentLayout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
