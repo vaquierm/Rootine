@@ -31,5 +31,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/calendarView" />
 
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="440dp"
+        android:textSize="15dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="Click the carrot to log\na meatless day!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/calendarView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
