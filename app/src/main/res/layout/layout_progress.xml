@@ -17,26 +17,72 @@
         android:bottomRightRadius="10dp"
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp"
-        app:srcCompat="?attr/colorAccent" />
+        app:srcCompat="@android:color/darker_gray" />
 
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="156dp"
         android:layout_height="156dp"
-        app:srcCompat="@mipmap/chicken" />
+        android:layout_marginLeft="4dp"
+        app:srcCompat="@mipmap/blank" />
 
     <TextView
         android:id="@+id/imageName"
+        android:layout_width="252dp"
+        android:layout_height="57dp"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
+        android:text="This week's progress:"
+        android:textColor="#000"
+        android:textSize="25sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="213dp"
+        android:layout_height="54dp"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_marginStart="87dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginBottom="40dp"
+        android:background="#00F8F8F8"
+        android:maxHeight="40dip"
+        android:minHeight="30dip"
+        android:progressTint="#4CAF50"
+        android:scaleY="8" />
+
+    <TextView
+        android:id="@+id/countDownText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="57dp"
-        android:layout_toRightOf="@+id/image"
-        android:text="Chicken"
-        android:textColor="#000"
-        android:textSize="30sp" />
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="4dp"
+        android:text="days until a new animal! You got this!"
+        android:textSize="17sp"
+        android:gravity="center"/>
 
 
 </RelativeLayout>

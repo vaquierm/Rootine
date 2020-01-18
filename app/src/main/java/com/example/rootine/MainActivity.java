@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     public ImageButton calBtn;
     public ImageButton aniBtn;
     public Spinner spn;
+    public AppManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +22,13 @@ public class MainActivity extends AppCompatActivity {
         this.calBtn = (ImageButton) findViewById(R.id.calenderButton);
         this.aniBtn = (ImageButton) findViewById(R.id.animalsButton);
         this.spn = (Spinner) findViewById(R.id.spinner);
+        this.manager = AppManager.getInstance();
+
 
         calBtn.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
+                    updateGoal();
                     Intent i = new Intent(MainActivity.this, CalendarActivity.class);
                     startActivity(i);
                 }
@@ -34,10 +38,19 @@ public class MainActivity extends AppCompatActivity {
         aniBtn.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
+                    updateGoal();
                     Intent i = new Intent(MainActivity.this, AnimalActivity.class);
                     startActivity(i);
                 }
             }
         );
+
     }
+
+    private void updateGoal(){
+        String spinnerContents = spn.getSelectedItem().toString();
+        int goal = Integer.parseInt(spinnerContents);
+        manager.setGoal(goal);
+    }
+
 }
