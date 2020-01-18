@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="384dp"
+        android:layout_height="142dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="-146dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/image"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        app:srcCompat="?attr/colorAccent" />
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="156dp"
+        android:layout_height="156dp"
+        app:srcCompat="@mipmap/chicken" />
+
+    <TextView
+        android:id="@+id/imageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="57dp"
+        android:layout_toRightOf="@+id/image"
+        android:text="Chicken"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
+
+</RelativeLayout>

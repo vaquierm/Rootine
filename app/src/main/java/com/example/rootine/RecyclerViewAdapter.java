@@ -31,27 +31,46 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
+        View view;
+        if(viewType == R.layout.layout_listitem){
+            Log.d(TAG, "LISTITEMVIEW-CALLED");
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
+        }
+        else
+        {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_progress, parent, false);
+        }
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: called");
-        ///figure out how to update the images as well!!!
-        holder.imageName.setText(mImageNames.get(position));
-        holder.image.setImageResource(mImages.get(position));
-        holder.parentLayout.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-               //Log.d(TAG, "onClick: clicked on: " + mImageNames.get(position));
-            }
-        });
+        if(position == mImageNames.size()){
+            //initialize slider and stuff
+        }
+        else{
+            holder.imageName.setText(mImageNames.get(position));
+            holder.image.setImageResource(mImages.get(position));
+            holder.parentLayout.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    //Log.d(TAG, "onClick: clicked on: " + mImageNames.get(position));
+                }
+            });
+        }
+
     }
 
     @Override
     public int getItemCount() {
-        return mImageNames.size();
+        return mImageNames.size() + 1;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        Log.d(TAG, "GET-ITEM-VIEW-CALLED");
+        return (position == mImageNames.size()) ? R.layout.layout_progress : R.layout.layout_listitem;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -65,6 +84,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             image = itemView.findViewById(R.id.image);
             imageName = itemView.findViewById(R.id.imageName);
             parentLayout = itemView.findViewById(R.id.parent_layout);
+            //Add slider and stuff to the viewholder
+
         }
     }
 }

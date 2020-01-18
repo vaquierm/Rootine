@@ -95,6 +95,9 @@ public class AnimalActivity extends AppCompatActivity {
             animalNames.clear();
         }
 
+       // animalNames.add("");
+       //g animalImages.add(R.mipmap.blank);
+
         initRecyclerView();
 
         //add images to thing

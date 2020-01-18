@@ -11,7 +11,7 @@ public class AppManager {
     private AppManager(){
         goal = 0;
         //SET THIS TO 0 LATER
-        numAnimals = 0;
+        numAnimals = 6;
     }
     static AppManager getInstance(){
         if (instance == null){
