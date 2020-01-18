@@ -20,5 +20,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/daysLeftText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="440dp"
+        android:textSize="15dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/calendarView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
