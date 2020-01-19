@@ -2,26 +2,21 @@ package com.example.rootine;
 
 import android.os.Bundle;
 
-import com.applandeo.materialcalendarview.CalendarView;
-import com.applandeo.materialcalendarview.EventDay;
-import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 public class CalendarActivity extends AppCompatActivity {
 
     private TextView daysLeftText;
-    private CalendarView calendarView;
-    private List<EventDay> events;
+    private MaterialCalendarView calendarView;
 
     private AppManager manager = AppManager.getInstance();
 
@@ -36,8 +31,6 @@ public class CalendarActivity extends AppCompatActivity {
         daysLeftText = findViewById(R.id.daysLeftText);
 
         updateTextBox();
-
-        this.events = manager.getNoMeatDays();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -56,15 +49,18 @@ public class CalendarActivity extends AppCompatActivity {
                     displayMessage(view, "You reached your goal! Go find your new animal in your wildlife reserve!");
                 }
 
-                // Display how many days left
+                // Display how many noMeatDays left
                 updateTextBox();
 
                 Calendar managerDate = manager.getCurrentDate();
 
                 Calendar today = Calendar.getInstance();
                 today.set(managerDate.get(Calendar.YEAR), managerDate.get(Calendar.MONTH), managerDate.get(Calendar.DATE));
-                events.add(new EventDay(today, R.mipmap.carrot_transparant));
-                calendarView.setEvents(events);
+
+                // Add today as a no meat day
+                manager.getNoMeatDays().add(today);
+
+                refreshDecorators();
             }
         });
 
@@ -74,11 +70,16 @@ public class CalendarActivity extends AppCompatActivity {
             public void onClick(View view) {
                 manager.incrementDate();
                 updateTextBox();
+
+                refreshDecorators();
             }
         });
 
-        calendarView = (CalendarView) findViewById(R.id.calendarView);
-        calendarView.setEvents(events);
+        calendarView = (MaterialCalendarView) findViewById(R.id.calendarView);
+
+        calendarView.setSelectionMode(MaterialCalendarView.SELECTION_MODE_NONE);
+
+        refreshDecorators();
     }
 
     public void displayMessage(View view, String message) {
@@ -103,5 +104,12 @@ public class CalendarActivity extends AppCompatActivity {
         }
 
         daysLeftText.setText(message);
+    }
+
+    private void refreshDecorators() {
+        calendarView.removeDecorators();
+        calendarView.addDecorator(new CurrentDayDecorator());
+        calendarView.addDecorator(new CarrotDecorator(this));
+        calendarView.addDecorator(new CarrotTodayDecorator(this));
     }
 }

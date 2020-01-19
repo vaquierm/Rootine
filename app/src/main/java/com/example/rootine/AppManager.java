@@ -1,11 +1,7 @@
 package com.example.rootine;
 
-import com.applandeo.materialcalendarview.EventDay;
-import com.google.android.material.snackbar.Snackbar;
-
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 
 //singleton class that keeps track of the app activity
@@ -13,7 +9,7 @@ public class AppManager {
 
     private static AppManager instance = null;
 
-    private List<EventDay> noMeatDays = new ArrayList<>();
+    private List<Calendar> noMeatDays = new ArrayList<>();
 
     private Calendar currentDate;
 
@@ -73,10 +69,6 @@ public class AppManager {
         }
     }
 
-    public List<EventDay> getNoMeatDays() {
-        return noMeatDays;
-    }
-
     public void noMeatToday() {
         if (!loggedNoMeatToday) {
             noMeatDaysThisWeek++;
@@ -98,5 +90,9 @@ public class AppManager {
 
     public boolean getLoggedToday() {
         return this.loggedNoMeatToday;
+    }
+
+    public List<Calendar> getNoMeatDays() {
+        return this.noMeatDays;
     }
 }
