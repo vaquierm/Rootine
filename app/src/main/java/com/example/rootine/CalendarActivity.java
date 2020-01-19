@@ -108,6 +108,7 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     private void refreshDecorators() {
+        calendarView.setCurrentDate(AppManager.getInstance().getCurrentDate());
         calendarView.removeDecorators();
         calendarView.addDecorator(new CurrentDayDecorator());
         calendarView.addDecorator(new CarrotDecorator(this));
