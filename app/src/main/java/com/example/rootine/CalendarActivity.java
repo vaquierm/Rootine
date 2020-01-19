@@ -27,6 +27,7 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calendar);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("Calendar");
 
         daysLeftText = findViewById(R.id.daysLeftText);
 

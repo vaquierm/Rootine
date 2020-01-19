@@ -24,6 +24,7 @@ public class AnimalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal);
+        setTitle("My Wildlife Reserve");
         Log.d(TAG, "onCreate: started");
         manager = AppManager.getInstance();
         numAnimals = manager.getNumAnimals();
@@ -36,10 +37,20 @@ public class AnimalActivity extends AppCompatActivity {
 
         animalImages.add(R.mipmap.chicken);
         animalNames.add("Chicken");
+        animalImages.add(R.mipmap.turtle);
+        animalNames.add("Turtle");
+        animalImages.add(R.mipmap.pig);
+        animalNames.add("Pig");
         animalImages.add(R.mipmap.kangaroo);
         animalNames.add("Kangaroo");
         animalImages.add(R.mipmap.bee);
         animalNames.add("Bumblebee");
+        animalImages.add(R.mipmap.frog);
+        animalNames.add("Frog");
+        animalImages.add(R.mipmap.snail);
+        animalNames.add("Snail");
+        animalImages.add(R.mipmap.sheep);
+        animalNames.add("Sheep");
         animalImages.add(R.mipmap.cat);
         animalNames.add("Cat");
         animalImages.add(R.mipmap.horse);
@@ -56,8 +67,6 @@ public class AnimalActivity extends AppCompatActivity {
         animalNames.add("Elephant");
         animalImages.add(R.mipmap.falcon);
         animalNames.add("Falcon");
-        animalImages.add(R.mipmap.frog);
-        animalNames.add("Frog");
         animalImages.add(R.mipmap.gorilla);
         animalNames.add("Gorilla");
         animalImages.add(R.mipmap.mite);
@@ -66,24 +75,18 @@ public class AnimalActivity extends AppCompatActivity {
         animalNames.add("Mosquito");
         animalImages.add(R.mipmap.octopus);
         animalNames.add("Octopus");
-        animalImages.add(R.mipmap.pig);
-        animalNames.add("Pig");
         animalImages.add(R.mipmap.rabbit);
         animalNames.add("Rabbit");
         animalImages.add(R.mipmap.seahorse);
         animalNames.add("Seahorse");
-        animalImages.add(R.mipmap.sheep);
-        animalNames.add("Sheep");
-        animalImages.add(R.mipmap.snail);
-        animalNames.add("Snail");
         animalImages.add(R.mipmap.starfish);
         animalNames.add("Starfish");
-        animalImages.add(R.mipmap.turtle);
-        animalNames.add("Turtle");
         animalImages.add(R.mipmap.wasp);
         animalNames.add("Wasp");
         animalImages.add(R.mipmap.whale);
         animalNames.add("Whale");
+        animalImages.add(R.mipmap.ant);
+        animalNames.add("Ant");
 
         int totalNumAnimals = animalImages.size();
         //get a sublist equal to the number of animals the user as earned

@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setTitle("");
+
         this.calBtn = (ImageButton) findViewById(R.id.calenderButton);
         this.aniBtn = (ImageButton) findViewById(R.id.animalsButton);
         this.spn = (Spinner) findViewById(R.id.spinner);
