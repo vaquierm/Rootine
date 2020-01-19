@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
-import nl.dionsegijn.konfetti.KonfettiView;
-
 public class CalendarActivity extends AppCompatActivity {
 
     private TextView daysLeftText;
@@ -97,7 +95,7 @@ public class CalendarActivity extends AppCompatActivity {
         int noMeatThisWeek = manager.getNoMeatDaysThisWeek();
 
         if (goal == noMeatThisWeek) {
-            message += "You reached your goal this week!";
+            message += "You reached your weekly goal!";
 
         }
         else if (goal > noMeatThisWeek) {
