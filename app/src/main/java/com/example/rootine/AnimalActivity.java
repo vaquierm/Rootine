@@ -88,12 +88,15 @@ public class AnimalActivity extends AppCompatActivity {
         int totalNumAnimals = animalImages.size();
         //get a sublist equal to the number of animals the user as earned
         if (numAnimals != 0) {
-            animalImages.subList((numAnimals - 1), (totalNumAnimals - 1)).clear();
-            animalNames.subList((numAnimals - 1), (totalNumAnimals - 1)).clear();
+            animalImages.subList((numAnimals), (totalNumAnimals)).clear();
+            animalNames.subList((numAnimals), (totalNumAnimals)).clear();
         }else{
             animalImages.clear();
             animalNames.clear();
         }
+
+       // animalNames.add("");
+       //g animalImages.add(R.mipmap.blank);
 
         initRecyclerView();
 
